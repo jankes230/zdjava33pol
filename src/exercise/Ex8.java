@@ -1,28 +1,43 @@
 package exercise;
 
 public class Ex8 {
-/*    public static void main(String[] args) {
+   public static void main(String[] args) {
         int[] arithmeticSequence = {2,4,6};
-        isArithmeticSequence(arithmeticSequence);
+        printer(arithmeticSequence);
     }
 
     public static boolean isArithmeticSequence(int[] array){
-        int[] difference = new int [array.length];
-        for (int i =1;i<array.length;i++){
-            difference[i-1]=array[i]-array[i-1];
-        }
 
-        for (int i = 1; i<difference.length;i++){
-           if(difference[i-1]==difference[i]){
-               System.out.println(difference[i]);
+       int firstDiffrence = array[1]-array[0];
+       int notEquals = 0; //counter
+
+       for (int i = 2; i<array.length; i++) {
+           if (firstDiffrence==array[i]-array[i-1]) {
                continue;
+           } else {
+               notEquals++;
+           }
+       }
 
-           }if(difference[i-1]!= difference[i]) {
-               System.out.println("Ciąg nie jest arytmetyczny");
-                break;
-            }
+       if (notEquals==0){
+           return true;
+       }else {
+           return false;
+       }
+    }
+
+    public static void printer(int[] array){
+        if(array.length<=2){
+            System.out.println("Your sequence is too short");
+            return;
         }
-
-    }*/
+        while (isArithmeticSequence(array)){
+           System.out.println("The sequence is arithmetic");
+           break;
+       }
+       while (!isArithmeticSequence(array)){
+           System.out.println("The sequence isn't aritmetic");
+           break;
+       }
+    }
 }
-//int difference = row[1] - row[0]; for(int i =2; i < row.length; i++){ if(row[i]-row[i-1] != difference) return false; } return true;
