@@ -6,9 +6,10 @@ public class Main {
         Cat cat = new Cat();
         Cow cow = new Cow();
 
-        Object[] animals = {dog.makeSound(),cat.makeSound(),cow.makeSound()};
+        Object[] animals = {dog,cat,cow};
         for (Object element : animals){
-            System.out.println(element);
+            Animal convertedElement = (Animal) element;
+            System.out.println(convertedElement.makeSound());
         }
 
     }
